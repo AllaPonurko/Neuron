@@ -1,8 +1,7 @@
-package Models;
+package Models.AboutDevices;
 
-import Intefaces.Entity;
+import Models.AboutDevices.Device;
 
-import java.awt.*;
 import java.util.HashSet;
 import java.util.Set;
 

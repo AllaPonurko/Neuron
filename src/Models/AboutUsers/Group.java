@@ -1,4 +1,4 @@
-package Models;
+package Models.AboutUsers;
 
 import Intefaces.Entity;
 
@@ -6,8 +6,6 @@ import Intefaces.Entity;
 import java.util.HashSet;
 import java.util.Set;
 import java.util.UUID;
-import java.util.Optional;
-
 
 
 public class Group implements Entity {

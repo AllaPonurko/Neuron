@@ -1,4 +1,4 @@
-package Models;
+package Models.AboutUsers;
 
 import Intefaces.Entity;
 

@@ -1,6 +1,8 @@
+package Works;
+
 import Intefaces.Devices.ICrudRepository;
-import Models.Device;
-import Models.Devices;
+import Models.AboutDevices.Device;
+import Models.AboutDevices.Devices;
 
 import java.awt.*;
 import java.util.HashSet;

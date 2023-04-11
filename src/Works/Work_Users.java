@@ -1,10 +1,12 @@
-import Models.Group;
-import Models.User;
+package Works;
+
+import Models.AboutUsers.Group;
+import Models.AboutUsers.User;
 
 import java.util.Arrays;
 import java.util.OptionalDouble;
 
-public class Work implements Runnable{
+public class Work_Users implements Runnable{
     int [] numbers={-5,-6,-3,-1,0,11,2,3,4,5};
     @Override
     public void run() {

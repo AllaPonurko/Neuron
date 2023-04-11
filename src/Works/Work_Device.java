@@ -1,3 +1,5 @@
+package Works;
+
 import java.awt.*;
 
 public class Work_Device implements Runnable {
@@ -14,7 +16,7 @@ public class Work_Device implements Runnable {
         repository.findByType("Laptop");
         repository.findByYear(2021);
         repository.findByMorePrice(270);
-        repository.findByDiapasonYear(2019,2021);
+        repository.findByDiapasonYear(2021,2019);
     }
 
 

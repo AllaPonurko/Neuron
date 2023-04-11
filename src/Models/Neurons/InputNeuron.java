@@ -1,4 +1,4 @@
-package Models;
+package Models.Neurons;
 
 import Functions.FunctionActive;
 import Intefaces.Neurons.Neuron;
@@ -9,14 +9,21 @@ import java.util.Map;
 import java.util.Set;
 
 public class InputNeuron implements Neuron {
+    //коллекция соединений нейронов
     private Set<Neuron> connections = new HashSet<>();
+    //коллекция обратного соединения, хранящая нейрон и значение
     private final Map<Neuron, Double> backwardConnections = new HashMap<>();
+    //коллекция входящих сигналов, хранящая нейрон и значение
     private final Map<Neuron, Double> inputSignals = new HashMap<>();
+    //количество полученных сигналов
     private volatile int signalReceived;
+    //смещение нейрона
     private double bias;
+    //результат
     private volatile double forwardResult;
+    //функция активации
     private FunctionActive activationFunction ;
-
+//коллекция нейронов прямого соединения
     private final Set<Neuron> forwardConnections = new HashSet<>();
     @Override
     public  void forwardSignalReceived(Neuron from, Double value) {
