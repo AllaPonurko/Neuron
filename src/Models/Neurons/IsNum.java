@@ -1,4 +1,8 @@
 package Models.Neurons;
+
+import java.lang.reflect.Array;
+import java.util.Arrays;
+
 /*
  -
 | |
@@ -70,6 +74,55 @@ public class IsNum {
         System.out.println("\n --- \n");
     }
 
+    public void printDisplay(double[][] led) {
+        char[] str = {' ', ' ', ' ', ' ', ' '};
+
+      for(int i=0;i<led.length;i++)
+      {
+          if (led[i][0] == 1)
+              System.out.println(" *** ");
+          else
+              System.out.println("   ");
+          if (led[i][1] == 1)
+              str[0] = '*';
+          else
+              str[0] = ' ';
+          if (led[i][1] == 1)
+              str[0] = '*';
+          else
+              str[0] = ' ';
+          if (led[i][2] == 1)
+              str[4] = '*';
+          else
+              str[4] = ' ';
+          int j;
+          for (j = 0; j < 3; j++) {
+              System.out.println(str);
+          }
+          if (led[i][3] == 1)
+              System.out.println(" *** ");
+          else
+              System.out.println("     ");
+          if (led[i][4] == 1)
+              str[0] = '*';
+          else
+              str[0] = ' ';
+
+          if (led[i][5] == 1)
+              str[4] = '*';
+          else
+              str[4] = ' ';
+          for (j = 0; j < 3; j++) {
+              System.out.println(str);
+          }
+          if (led[i][6] == 1)
+              System.out.println(" *** ");
+          else
+              System.out.println("     ");
+
+          System.out.println("\n --- \n");
+      }
+    }
     public void printAll() {
         print(led1);
         print(led2);
@@ -93,7 +146,21 @@ public class IsNum {
     public MyNeuron is8 = new MyNeuron(8);
     public MyNeuron is9 = new MyNeuron(8);
     public MyNeuron is0 = new MyNeuron(8);
-
+    private MyNeuron[] neurons=new MyNeuron[10];
+    public MyNeuron[] initialize()
+    {
+        neurons[0]=is0;
+        neurons[1]=is1;
+        neurons[2]=is2;
+        neurons[3]=is3;
+        neurons[4]=is4;
+        neurons[5]=is5;
+        neurons[6]=is6;
+        neurons[7]=is7;
+        neurons[8]=is8;
+        neurons[9]=is9;
+        return neurons;
+    }
     public void edu1() {
         for (int i = 0; i < eduSteps; i++) {
             is1.backpropagation(led1, 1, 0.1);
@@ -266,50 +333,95 @@ public class IsNum {
         System.out.println("7 => " + is2.forwardInputs(led7));
         System.out.println("8 => " + is2.forwardInputs(led8));
         System.out.println("9 => " + is2.forwardInputs(led9));
+        System.out.println("0 => " + is2.forwardInputs(led0));
         System.out.println("--------------------------------");
     }
-    public void test(double[] led){
-        print(led);
-        System.out.println("1 => " + is1.forwardInputs(led));
-        System.out.println("2 => " + is2.forwardInputs(led));
-        System.out.println("3 => " + is3.forwardInputs(led));
-        System.out.println("4 => " + is4.forwardInputs(led));
-        System.out.println("5 => " + is5.forwardInputs(led));
-        System.out.println("6 => " + is6.forwardInputs(led));
-        System.out.println("7 => " + is7.forwardInputs(led));
-        System.out.println("8 => " + is8.forwardInputs(led));
-        System.out.println("9 => " + is9.forwardInputs(led));
-        System.out.println("9 => " + is9.forwardInputs(led));
+    public void is3() {
+        System.out.println("1 => " + is3.forwardInputs(led1));
+        System.out.println("2 => " + is3.forwardInputs(led2));
+        System.out.println("3 => " + is3.forwardInputs(led3));
+        System.out.println("4 => " + is3.forwardInputs(led4));
+        System.out.println("5 => " + is3.forwardInputs(led5));
+        System.out.println("6 => " + is3.forwardInputs(led6));
+        System.out.println("7 => " + is3.forwardInputs(led7));
+        System.out.println("8 => " + is3.forwardInputs(led8));
+        System.out.println("9 => " + is3.forwardInputs(led9));
+        System.out.println("0 => " + is3.forwardInputs(led0));
+        System.out.println("--------------------------------");
+    }
+        public void is4() {
+            System.out.println("1 => " + is4.forwardInputs(led1));
+            System.out.println("2 => " + is4.forwardInputs(led2));
+            System.out.println("3 => " + is4.forwardInputs(led3));
+            System.out.println("4 => " + is4.forwardInputs(led4));
+            System.out.println("5 => " + is4.forwardInputs(led5));
+            System.out.println("6 => " + is4.forwardInputs(led6));
+            System.out.println("7 => " + is4.forwardInputs(led7));
+            System.out.println("8 => " + is4.forwardInputs(led8));
+            System.out.println("9 => " + is4.forwardInputs(led9));
+            System.out.println("0 => " + is4.forwardInputs(led0));
+            System.out.println("--------------------------------");
 
-        if(is1.forwardInputs(led) > 0.5) {
-            System.out.println(" 1 ");
-        }
-        if(is2.forwardInputs(led) > 0.5) {
-            System.out.println(" 2 ");
-        }
-        if(is3.forwardInputs(led) > 0.5) {
-            System.out.println(" 3 ");
-        }
-        if(is4.forwardInputs(led) > 0.5) {
-            System.out.println(" 4 ");
-        }
-        if(is5.forwardInputs(led) > 0.5) {
-            System.out.println(" 5 ");
-        }
-        if(is6.forwardInputs(led) > 0.5) {
-            System.out.println(" 6 ");
-        }
-        if(is7.forwardInputs(led) > 0.5) {
-            System.out.println(" 7 ");
-        }
-        if(is8.forwardInputs(led) > 0.5) {
-            System.out.println(" 8 ");
-        }
-        if(is9.forwardInputs(led) > 0.5) {
-            System.out.println(" 9 ");
-        }
-        if(is0.forwardInputs(led) > 0.5) {
-            System.out.println(" 0 ");
+    }
+    public void is5() {
+        System.out.println("1 => " + is5.forwardInputs(led1));
+        System.out.println("2 => " + is5.forwardInputs(led2));
+        System.out.println("3 => " + is5.forwardInputs(led3));
+        System.out.println("4 => " + is5.forwardInputs(led4));
+        System.out.println("5 => " + is5.forwardInputs(led5));
+        System.out.println("6 => " + is5.forwardInputs(led6));
+        System.out.println("7 => " + is5.forwardInputs(led7));
+        System.out.println("8 => " + is5.forwardInputs(led8));
+        System.out.println("9 => " + is5.forwardInputs(led9));
+        System.out.println("0 => " + is5.forwardInputs(led0));
+        System.out.println("--------------------------------");
+
+    }
+    public void test(double[][] led) {
+        printDisplay(led);
+        for (int i = 0; i < led.length; i++) {
+
+            System.out.println("1 => " + is1.forwardInputs(led[i]));
+            System.out.println("2 => " + is2.forwardInputs(led[i]));
+            System.out.println("3 => " + is3.forwardInputs(led[i]));
+            System.out.println("4 => " + is4.forwardInputs(led[i]));
+            System.out.println("5 => " + is5.forwardInputs(led[i]));
+            System.out.println("6 => " + is6.forwardInputs(led[i]));
+            System.out.println("7 => " + is7.forwardInputs(led[i]));
+            System.out.println("8 => " + is8.forwardInputs(led[i]));
+            System.out.println("9 => " + is9.forwardInputs(led[i]));
+            System.out.println("0 => " + is0.forwardInputs(led[i]));
+
+            if (is1.forwardInputs(led[i]) > 0.5) {
+                System.out.println(" 1 ");
+            }
+            if (is2.forwardInputs(led[i]) > 0.5) {
+                System.out.println(" 2 ");
+            }
+            if (is3.forwardInputs(led[i]) > 0.5) {
+                System.out.println(" 3 ");
+            }
+            if (is4.forwardInputs(led[i]) > 0.5) {
+                System.out.println(" 4 ");
+            }
+            if (is5.forwardInputs(led[i]) > 0.5) {
+                System.out.println(" 5 ");
+            }
+            if (is6.forwardInputs(led[i]) > 0.5) {
+                System.out.println(" 6 ");
+            }
+            if (is7.forwardInputs(led[i]) > 0.5) {
+                System.out.println(" 7 ");
+            }
+            if (is8.forwardInputs(led[i]) > 0.5) {
+                System.out.println(" 8 ");
+            }
+            if (is9.forwardInputs(led[i]) > 0.5) {
+                System.out.println(" 9 ");
+            }
+            if (is0.forwardInputs(led[i]) > 0.5) {
+                System.out.println(" 0 ");
+            }
         }
     }
 }

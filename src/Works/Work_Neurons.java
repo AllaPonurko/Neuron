@@ -24,10 +24,11 @@ public class Work_Neurons implements Runnable{
         double[] led1 = {0,0,1,0,0,1,0,1};
         double[] led7 = {1,0,1,0,0,1,0,1};
         double[] led0 = {1, 1, 1, 0, 1, 1, 1, 1};
-        isNum.test(led1);
-        isNum.test(led7);
-        isNum.test(led0);
-
+        double[] led5 = {1, 1, 0, 1, 0, 1, 1, 1};
+        isNum.test(new double[][]{led0,led5,led1,led7});
+//        isNum.test(led1);
+//        isNum.test(led7);
+//        isNum.test(led0);
 
     }
 }
