@@ -11,7 +11,9 @@ public class Work_Projector implements Runnable{
       projectors.readRepository();
       projectors.findByMorePrice(300);
       projectors.findByYear(2023);
+      projectors.findByVendor("BenQ");
       projectors.sortByLessPrice();
-      projectors.findByVendor("");
+      projectors.sortByMorePrice();
+
     }
 }

@@ -3,6 +3,7 @@ package Models.AboutDevices;
 import Intefaces.Entity;
 
 import java.awt.*;
+import java.util.Random;
 import java.util.UUID;
 
 public class Projector implements Entity {
@@ -31,18 +32,19 @@ public class Projector implements Entity {
     public int getPrice() {
         return Price;
     }
-    public Projector(String name, String vendor,int price,int year)
+    public Projector(String name, String vendor,int year)
     {
+        Random random=new Random();
         Id=UUID.randomUUID();
         Name=name;
         Vendor=vendor;
-        Price=price;
+        Price=random.nextInt(250,500);
         Year=year;
     }
     @Override
     public String toString()
     {
         return "Name: "+getName()+"\n"+"Vendor: "+getVendor()+"\n"
-                +"Year: "+getYear()+"\n"+"Price: "+getPrice();
+                +"Year: "+getYear()+"\n"+"Price: "+getPrice()+"$\n"+"_________________\n";
     }
 }
