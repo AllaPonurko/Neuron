@@ -2,11 +2,10 @@ package Models.AboutDevices;
 
 import Intefaces.Entity;
 
-import java.awt.*;
 import java.util.Random;
 import java.util.UUID;
 
-public class Projector implements Entity {
+public class Projector implements Entity,Comparable<Projector> {
     @Override
     public UUID getId() {
         return null;
@@ -41,10 +40,15 @@ public class Projector implements Entity {
         Price=random.nextInt(250,500);
         Year=year;
     }
+    
     @Override
     public String toString()
     {
         return "Name: "+getName()+"\n"+"Vendor: "+getVendor()+"\n"
                 +"Year: "+getYear()+"\n"+"Price: "+getPrice()+"$\n"+"_________________\n";
+    }
+    @Override
+    public int compareTo(Projector p) {
+        return Name.compareTo(p.Name);
     }
 }

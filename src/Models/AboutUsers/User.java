@@ -1,6 +1,7 @@
 package Models.AboutUsers;
 
 import Intefaces.Entity;
+import Models.AboutDevices.Projector;
 
 import java.util.UUID;
 
@@ -34,9 +35,11 @@ public class User implements Entity {
     public UUID getId() {
         return Id;
     }
+
     @Override
     public String toString()
     {
         return getName()+" "+getEmail();
     }
+
 }

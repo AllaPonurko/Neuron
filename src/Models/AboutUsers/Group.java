@@ -1,6 +1,7 @@
 package Models.AboutUsers;
 
 import Intefaces.Entity;
+import Models.AboutDevices.Projector;
 
 
 import java.util.HashSet;
@@ -38,4 +39,6 @@ public class Group implements Entity {
     public UUID getId() {
         return Id;
     }
+
+
 }

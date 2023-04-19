@@ -9,7 +9,7 @@ public class Work_Projector implements Runnable{
     public void run() {
       projectors.seed();
       projectors.readRepository();
-      projectors.findByMorePrice(300);
+      projectors.findByMorePrice(350);
       projectors.findByYear(2023);
       projectors.findByVendor("BenQ");
       projectors.sortByLessPrice();

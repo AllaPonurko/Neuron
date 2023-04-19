@@ -29,17 +29,32 @@ public class RepositoryProjectors extends Projectors implements ICrudRepository 
         createDevice(new Projector("TH575 Б1252-6","BenQ",2021));
         createDevice(new Projector("TH575","BenQ",2023));
     }
-public void sortByMorePrice()
+
+
+    public void sortByMorePrice()
 {
     System.out.println("*****************\nCollection projectors sort by more price: ");
-//    List<Projector> sortList=projectorList.stream().toList();
-//    Collections.sort(sortList,( o1, o2) -> o1.getPrice() - o2.getPrice());
-//    sortList.stream().forEach(p->System.out.println(p.toString()));
+   ArrayList<Projector> sortListMore=new ArrayList<>();
+    for (var item:projectorList)
+    {
+        sortListMore.add(item);
+    }
+    Collections.sort(sortListMore,( p1, p2) -> p1.getPrice() - p2.getPrice());
+    sortListMore.forEach(p->System.out.println(p.toString()));
 
 }
-public void sortByLessPrice()
-{
-
+public void sortByLessPrice() {
+    System.out.println("*****************\nCollection projectors sort by less price: ");
+    try {
+        ArrayList<Projector> sortListLess = new ArrayList<>();
+        for (var item : projectorList) {
+            sortListLess.add(item);
+        }
+        Collections.sort(sortListLess, (p1, p2) -> p2.getPrice() - p1.getPrice());
+        sortListLess.forEach(p -> System.out.println(p.toString()));
+    } catch (Exception e) {
+            throw new RuntimeException(e);
+    }
 }
 public void findByVendor(String vendor) {
     System.out.println("Collection projectors by vendor " +
